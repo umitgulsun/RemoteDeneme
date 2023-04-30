@@ -14,7 +14,7 @@ import utilities.MyRemoteDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-import static stepdefinitions.UIStepDef.US_13_14_PozitifOgretmenOlusturma_GuncellemeStepDef.sonSayfa;
+
 
 public class US_13_NegatifOgretmenOlusturmaStepDef {
     SchoolTeacherAddPage schoolTeacherAddPage = new SchoolTeacherAddPage();
@@ -96,11 +96,11 @@ public class US_13_NegatifOgretmenOlusturmaStepDef {
     @Then("girilen ogretmen bilgilerinin kaydolmadigini dogrular")
     public void girilenOgretmenBilgilerininKaydolmadiginiDogrular() {
         for (WebElement w : schoolTeacherAddPage.ogretmenLastSayfaWebelementList) {
-            sonSayfa.add(w.getText());
+        //    sonSayfa.add(w.getText());
         //    Assert.assertFalse("Ssn nolu Testimiz kaldi", ssnListesi.contains(w.getText()));
         }
 
-        System.out.println(sonSayfa);
+      //  System.out.println(sonSayfa);
         System.out.println(ssnListesi);
     }
 

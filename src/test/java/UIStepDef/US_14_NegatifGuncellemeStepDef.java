@@ -15,7 +15,7 @@ import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-import static stepdefinitions.UIStepDef.US_13_14_PozitifOgretmenOlusturma_GuncellemeStepDef.*;
+
 
 
 public class US_14_NegatifGuncellemeStepDef {
