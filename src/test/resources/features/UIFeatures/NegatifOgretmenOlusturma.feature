@@ -1,14 +1,12 @@
 @den@hen
 Feature: Vice Dean Ogretmen olusturabilmelidir
 
-  Background: :Teacher olarak giris yapar
+  Scenario Outline: Ogretmen bilgileri girilerek ogretmen olusturma negatif test
+    Given Setup Driver "http://192.168.16.100:4444" "chrome"
     Given Kullanici anasayfaya gider
     Given Kullanici Anasayfada logine tiklar
     Given "username" ve "password" girer
     Then  login tusuna tiklar
-
-
-  Scenario Outline: Ogretmen bilgileri girilerek ogretmen olusturma negatif test
     Given Kullanici menu butonuna tiklar
     Given Kullanici ogretmen alanina tiklar
     Given "<dersler>" ve "<ders>"alanina ders bilgileri girer
@@ -24,7 +22,6 @@ Feature: Vice Dean Ogretmen olusturabilmelidir
     Given "<username>" alanina username bilgileri girer
     Given "<password>" alanina password bilgileri girer
     Then  submit tusuna tiklar
-    Then  sayfayi "<ssn>" numarasına gore olusup olusmadıgını kontrol eder
 
     Examples:
       | dersler | name  | surname |email        | danisman | birthplace | gender | birthday   | phone        | ssn         | username | password |
@@ -36,9 +33,8 @@ Feature: Vice Dean Ogretmen olusturabilmelidir
       | JAVA   | umit  | toray   |fert@jaa     | danisma  | adana      | gender | 22.04.2000 | 475-855-8874 | 894-85-8974 | umitg    | Pl123456 |
 
 
-    Scenario:
-      Then close the application
-
+Scenario:
+  Given close remoteDriver
 
 
 

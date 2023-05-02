@@ -1,17 +1,16 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.MyRemoteDriver;
-
 
 import java.util.List;
 
-public class SchoolTeacherAddPage {
+public class SchoolTeacherAddPageRemote {
 
-    public SchoolTeacherAddPage() {
-        PageFactory.initElements(MyRemoteDriver.getRemoteDriver(),this);
+    public SchoolTeacherAddPageRemote(WebDriver remoteDriver) {
+        PageFactory.initElements(remoteDriver, this);
     }
 
 
@@ -100,5 +99,25 @@ public class SchoolTeacherAddPage {
     @FindBy(xpath = "(//*[@class='btn-close'])[3]")
     public WebElement GuncellemedenSonraCikis;
 
+    @FindBy(id = "username")
+    public WebElement username;
 
+//  @FindBy(xpath = "(//*[text()='Teacher Management'])[2]")
+//  public WebElement teacherManagementLink;
+    @FindBy(css = "[type='password']")
+    public WebElement password;
+    @FindBy(xpath = "(//*[text()='Login'])[2]")
+    public WebElement LoginButton;
+    @FindBy(xpath = "//*[text()='Logout']")
+    public WebElement logout;
+
+    @FindBy(xpath = "(//*[@type='button'])[28]")
+    public WebElement editKapat;
+    @FindBy(css = "[class='header_link ms-2']")
+    public WebElement LoginAnasayfaLinki;
+// @FindBy(xpath = "//*[text()='Menu']")
+// public WebElement menu;
+
+    @FindBy(xpath = "//*[text()='Yes']")
+    public WebElement logoutYesButton;
 }
